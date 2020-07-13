@@ -17,12 +17,12 @@ public class ClosedDoor : MonoBehaviour
         this.transform.parent.GetComponent<Renderer>().material.color = originalColor;
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)  //will trigger when overlapping with another collider 
     {
         this.transform.parent.GetComponent<Renderer>().material.color = Color.red;
     }
 
-    public void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)   //will trigger when overlapp ends 
     {
         this.transform.parent.GetComponent<Renderer>().material.color = originalColor;
     }

@@ -19,13 +19,13 @@ public class TeleportUI : MonoBehaviour
         if (gvrStatus)
         {
             gvrTimer += Time.deltaTime;
-            imgLoad.fillAmount = gvrTimer / lookTime;
+            imgLoad.fillAmount = gvrTimer / lookTime;      //fills the loading image depending on how much time has passed
         }
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
 
         if(Physics.Raycast(ray, out hit, distOfRay))
         {
-            if(imgLoad.fillAmount == 1 && hit.transform.CompareTag("Teleport"))
+            if(imgLoad.fillAmount == 1 && hit.transform.CompareTag("Teleport"))     //when image fully filled run the TeleportPlayer() comand in Teleport.cs
             {
                 hit.transform.gameObject.GetComponent<Teleport>().TeleportPlayer();
             }
