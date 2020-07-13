@@ -11,7 +11,6 @@ public class ClosedDoor : MonoBehaviour
         originalColor = this.transform.parent.GetComponent<Renderer>().material.color;
     }
 
- 
     public void reset()
     {
         this.transform.parent.GetComponent<Renderer>().material.color = originalColor;
